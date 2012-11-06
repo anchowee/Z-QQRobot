@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vckers.HTTP</name>
+    </assembly>
+    <members>
+        <member name="T:Vckers.HTTP.Vckers_Http">
+            <summary>
+            Vckers_Http对象库
+            </summary>
+        </member>
+        <member name="M:Vckers.HTTP.Vckers_Http.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Vckers.HTTP.Vckers_Http.SendDataByGet(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            用Get方式获取网页
+            </summary>
+            <param name="url">URl地址</param>
+            <param name="referer">来路</param>
+            <param name="cookie">Cookie</param>
+            <param name="useragent">User-Agent</param>
+            <param name="charset">编码</param>
+            <returns>返回网页源代码</returns>
+        </member>
+        <member name="M:Vckers.HTTP.Vckers_Http.SendDataByPost(System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            使用POST方式获取URl
+            </summary>
+            <param name="url">URL地址</param>
+            <param name="postdata">发送的数据，侠客X内提取的</param>
+            <param name="referer">来路</param>
+            <param name="cookie">Cookie</param>
+            <param name="useragent">User-Agent</param>
+            <param name="charset">编码</param>
+            <param name="Redirects">是否跳转</param>
+            <returns>返回网页源代码</returns>
+        </member>
+        <member name="M:Vckers.HTTP.Vckers_Http.GetPic(System.String,System.String,System.String)">
+            <summary>
+            用Get方式获取图片
+            </summary>
+            <param name="url">图片URl</param>
+            <param name="cookie">Cookie</param>
+            <param name="useragent">User-Agent</param>
+            <returns>返回Image格式的图片</returns>
+        </member>
+        <member name="M:Vckers.HTTP.Vckers_Http.ClearPostData">
+            <summary>
+            清除POST数据
+            </summary>
+        </member>
+        <member name="M:Vckers.HTTP.Vckers_Http.AddPostField(System.String,System.Object)">
+            <summary>
+            增加提交数据信息
+            </summary>
+            <param name="FieldName"></param>
+            <param name="Value"></param>
+        </member>
+        <member name="M:Vckers.HTTP.Vckers_Http.GetHeader">
+            <summary>
+            获取所有头信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vckers.HTTP.Vckers_Http.GetResponseImage">
+            <summary>
+            获取返回图片
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vckers.HTTP.Vckers_Http.Post">
+            <summary>
+            通过参数指定提交
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vckers.HTTP.Vckers_Http.GetResponseText(System.String)">
+            <summary>
+            获取返回文本
+            </summary>
+            <param name="Charset">string类型的编码例如 GB2312</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vckers.HTTP.Vckers_Http.ByteToImg(System.Byte[])">
+            <summary>
+            将byte字节转换为图片
+            </summary>
+            <param name="imgData"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Vckers.HTTP.Vckers_Http.User_Agent">
+            <summary>
+            设置User-Agent
+            </summary>
+        </member>
+        <member name="P:Vckers.HTTP.Vckers_Http.PostDataCount">
+            <summary>
+            提交参数信息的个数
+            </summary>
+        </member>
+        <member name="P:Vckers.HTTP.Vckers_Http.ContentType">
+            <summary>
+            设置Content-Type属性
+            </summary>
+        </member>
+        <member name="P:Vckers.HTTP.Vckers_Http.Cookie">
+            <summary>
+            设置Cookie
+            </summary>
+        </member>
+        <member name="P:Vckers.HTTP.Vckers_Http.Active">
+            <summary>
+            对象是否是打开状态
+            </summary>
+        </member>
+        <member name="P:Vckers.HTTP.Vckers_Http.ContentLength">
+            <summary>
+            设置Send数据的长度 
+            </summary>
+        </member>
+        <member name="P:Vckers.HTTP.Vckers_Http.Referer">
+            <summary>
+            来路
+            </summary>
+        </member>
+        <member name="P:Vckers.HTTP.Vckers_Http.Charset">
+            <summary>
+            编码
+            </summary>
+        </member>
+    </members>
+</doc>

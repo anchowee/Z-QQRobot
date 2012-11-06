@@ -1,0 +1,8 @@
+E:\我的作品\Robot2011B\TestClass\bin\Debug\TestClass.dll
+E:\我的作品\Robot2011B\TestClass\bin\Debug\TestClass.pdb
+E:\我的作品\Robot2011B\TestClass\bin\Debug\QQRobot.SDK.dll
+E:\我的作品\Robot2011B\TestClass\bin\Debug\QQRobot.SDK.pdb
+E:\我的作品\Robot2011B\TestClass\obj\Debug\ResolveAssemblyReference.cache
+E:\我的作品\Robot2011B\TestClass\obj\Debug\TestClass.set.resources
+E:\我的作品\Robot2011B\TestClass\obj\Debug\TestClass.dll
+E:\我的作品\Robot2011B\TestClass\obj\Debug\TestClass.pdb

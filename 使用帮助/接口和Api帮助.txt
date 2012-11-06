@@ -1,0 +1,166 @@
+
++-----------------------------------------------------------------------------+
+			Z-QQRobot 接口使用帮助
++-----------------------------------------------------------------------------+
+
+	+--------------------------------------------------------+
+			机器人接口设置（默认POST设置）
+	+--------------------------------------------------------+
+
+  可以先查看下窗体中的发送QQ消息，接收QQ消息情况。没有问题的话，就可以开发接口，让
+机器人跟你的网站对接了。
+  以下设置都可以在 接口设置-POST设置 里设置。
+
+	/************************************************
+
+	1. 请大家写接口的时候注意接口的调试工作，接口的错误可能导致机器人的异常！
+
+	2. 接口要做成防止攻击的，比如防自动回复和防其他的机器人互相攻击。
+
+	**************************************************/
+
+
+一、参数信息（每当收到消息或触发一些功能是机器人都会以post方式将这些数据发送到接口）
+
+	Copyright	=接口密匙
+	Event		=事件类型
+	ClusterNum	=群号码
+	ClusterName	=群名称
+	Sender		=发送消息的QQ号码
+	Nick		=QQ昵称
+	Message		=发送的消息
+	SendTime	=收到消息事件的时间戳
+	Version		=机器人客户端版本号
+	RobotQQ		=机器人号码
+	ApiPort		=机器人Api端口
+
+
+二、Event具体事件
+
+	ReceiveAddFriends		收到加好友
+	ReceiveClusterIM		收到群消息
+	ReceiveNormalIM			收到好友消息
+	ReceiveTempClusterIM		收到讨论组消息
+	ReceiveTempSession		收到临时会话消息
+	ReceiveVibration		收到好友震动
+	ReceiveInputState               收到好友输入状态（表示好友第一次接触QQ）
+	ReceiveSignatureChanged		接受用户签名更改
+	ReceiveFriendChangeStatus	收到好友状态改变
+	LoginSucceed			机器人登陆成功
+	AddClusterSucceed               加入群成功
+	ReceiveNewMemberAdd             新成员加群
+	ReceiveKickOut                  被系统强制T下线
+	RemovedFromCluster              有成员被T出群
+	MemberCardChanged               有群成员更改群名片
+	NeedLoginVerify			需要登录验证码
+	NeedAddClusterVerify		需要加群验证码
+	NeedAddFriendVerify		需要添加好友验证码
+	AddFriendVerify			发送添加好友验证码
+	AddFriendSucceed                主动加好友成功
+	AddFriendFail                   主动加好友失败
+	ReceiveExternalApi		可以允许从外部api发生消息到指定插件
+	ReceiveRequestJoinCluster	有人请求加群(该事件需要VIP，且安装接口接管新人入群插件)具体返回格式请参照插件。
+	SleepTimeOk                     休眠时间结束
+	ReceiveInviteToAddCluster       收到邀请加群
+	ReceiveVoiceMessage		收到语音消息
+	PassWordWrong			登录密码错误
+
+
+三、接口（回调文件）的处理
+
+
+	CallBackUrl通过Request.Form（asp，asp.net）或$_POST（PHP）接收以上参数。处理收到的信息，然后Response.Write（asp ，asp.net）或echo（PHP）输出则就会发送到QQ  当接口返回为空的时候不发送到QQ。
+
+
+四、开发规则
+
+
+	POST方式提交Copyright, Event, ClusterNum, ClusterName, Sender, Nick, Message, RobotQQ, SendTime, Version参数给接口，由接口处理信息后返回结果！
+
+	或者调用Api
+
+	+--------------------------------------------------------+
+			机器人Api调用
+	+--------------------------------------------------------+
+
+一、调用方式
+
+	以请求文件的方式调用api，即将api调用的URL在ie地址栏里访问即可，php通常使用 file_get_contents() 调用api(亦可使用其他参数)。
+
+
+二、调用参数
+
+	http://IP:端口/Api?Key=密匙&SendType=事件类型&UTF=（0或1，1为UTF-8编码）&ID=QQ号码&Message=消息内容
+
+解释：
+	ip(机器人所在ip):端口(即登录时所填 api端口)?Key=密钥(设置里的 接口/Api密钥)&SendType=事件类型(参加下面的 SendType参数)&UTF=(0或1，1为UTF-8编码)&ID=QQ号码(主动发送信息给的QQ号)&Message=消息内容(好友，群发送的信息，t人的理由)
+
+
+【特别注意：消息内容一定要经过URl编码处理。】(PHP接口可以使用 urlencode() 函数处理)
+
+	例子：
+	注意：以下例子IP为本机（127.0.0.1），端口为（123)
+
+	http://127.0.0.1:123/Api?Key=Z-Robot.com&SendType=SendVibration&id=614422099
+	//给QQ：614422099发送震动
+
+	http://127.0.0.1:123/Api?Key=Z-Robot.com&SendType=ModifySignature&utf=1&message=%CE%D2%CA%C7Z%B9%A4%D7%F7%CA%D2QQRobot
+	//更新个性签名为()：我是Z工作室QQRobot
+
+	http://127.0.0.1:123/Api?Key=Z-Robot.com&SendType=SendMessage&utf=1&id=614422099&message=%CE%D2%CA%C7Z%B9%A4%D7%F7%CA%D2QQRobot
+	//给该QQ：614422099 发送信息：我是Z工作室QQRobot
+
+	http://127.0.0.1:123/Api?Key=Z-Robot.com&SendType=SendClusterMessage&utf=1&id=3465182&message=%B4%F3%BC%D2%BA%C3%A3%AC%CE%D2%CA%C7Z%B9%A4%D7%F7%CA%D2QQRobot%A3%AC%C7%EB%B4%F3%BC%D2%B6%E0%B6%E0%D6%A7%B3%D6Z%B9%A4%D7%F7%CA%D2%A3%AC%CE%D2%C3%C7%B5%C4%CD%F8%D5%BE%CA%C7%A3%BAim.z-robot.com
+	//给群(3465182)发送信息：大家好，我是Z工作室QQRobot，请大家多多支持Z工作室，我们的网站是：im.z-robot.com
+
+
+三、SendType参数
+
+	SendMessage             发送普通消息
+	SendClusterMessage      发送群消息
+	SendVibration           发送窗口抖动
+	ExitRobot               退出机器人
+	LoginStatus             返回当前登录状态
+	GetVerify               获取验证码（更改）
+	SendVerify              发送验证码（更改）
+	LoginRobot              登陆机器人
+	ResetRobot              重启机器人
+	AddBlackList            加入黑名单
+	DelBlackList            删除黑名单
+	ModifySignature         更改签名
+	UpdateConfig            及时更新配置文件，无需重启。
+	UpdateInfo              更新机器人，群组，好友，以及其他信息
+	Cluster                 开启/关闭群回复（ID 为1开启，0关闭）
+	Friend                  开启/关闭好友回复（ID 为1开启，0关闭）
+	ChangeStatus            更新QQ状态
+	GetQunList              获取所有群信息
+	ClearMemory             释放内存
+	AddCluster              主动加群（ID为群号，Message为附言。该操作可能会有验证码）
+	GetClusterVerify        获取加群验证码（ID为群号）
+	SendClusterVerify       发送加群验证码（ID为群号，Message为验证码）
+	ChangeNick              更改昵称，需要Message参数。
+	ExitCluster             退出群（Id为群号，只能一个）
+	KickOutMember           将对方T出群（Id为群号码，Message为好友号码）[支持多号码]
+	InviteMember            邀请对方加入群（Id为群号码，Message为好友号码）[支持多号码]
+	SendTempClusterMessage  发送讨论组消息
+	SendTempSession         发送临时会话消息（Id为对方QQ，Message消息）[支持多号码]
+	GetFriendList           获取好友列表
+	GetRobotClientKey       获取QQ登陆口令（通过这个口令可以免登陆进入QQ空间，邮箱，微博等。）
+	GetClusterInfo          获取指定群的群信息（Id为群号）
+	IsClusterAdmin          判断成员是否为群管理员（Id为群号，Message为成员号码）*返回信息[0表示普通用户，1表示管理员，2表示创始人，-1表示未找到该群号，-2表示未找到该成员]
+	SetFriendRemark         为好友设置备注信息。
+	AddFriend               加好友，ID为好友QQ，Message为加好友附言。
+	ChangePassword		修改记录的密码。
+
+	更多APi参照Api操作器。
+
+
+
+
+
++----------------------------------------------------------------------------------------------------+
+
+Z 工作室（Z-Studio）
+小雨
+2012年11月5日 22:53:18
+

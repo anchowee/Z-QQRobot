@@ -1,0 +1,20 @@
+
+	新版本新功能指引
+
+	
+	一、发送图片功能
+
+		命令格式：[img]图片地址[/img] （支持绝对路径，相对路径，和WEB网址）
+		功能应用：发送群消息，好友消息，临时会话消息；API发送；接口回复
+
+		应用举例：
+
+		1、发送群消息： ToQ 185593773 [img]http://im.z-robot.com/static/image/common/logo.png[/img]
+
+		2、发送好友消息：To 614422099 [img]http://im.z-robot.com/static/image/common/logo.png[/img]
+
+		3、发送临时会话：Tos 32524535 [img]http://im.z-robot.com/static/image/common/logo.png[/img]
+
+		4、API发送：Http://127.0.0.1:456/Api?Key=1234&utf=1&SendType=SendMessage&ID=614422099&Message=%5bimg%5dhttp%3a%2f%2fim.z-robot.com%2fstatic%2fimage%2fcommon%2flogo.png%5b%2fimg%5d
+		
+		5、接口回复：echo "[img]http://im.z-robot.com/static/image/common/logo.png[/img]";

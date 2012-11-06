@@ -1,0 +1,19 @@
+E:\我的作品\Robot2011B\Bin\QQRobot_Secure\各种插件\DemoPlug（测试插件源代码，标准空类）\obj\Debug\ResolveAssemblyReference.cache
+E:\我的作品\Robot2011B\Bin\QQRobot_Secure\各种插件\DemoPlug（测试插件源代码，标准空类）\obj\Debug\DemoPlug.set.resources
+E:\我的作品\Robot2011B\Bin\QQRobot_Secure\各种插件\DemoPlug（测试插件源代码，标准空类）\obj\Debug\TestClass.dll
+E:\我的作品\Robot2011B\Bin\QQRobot_Secure\各种插件\DemoPlug（测试插件源代码，标准空类）\obj\Debug\TestClass.pdb
+E:\我的作品\Robot2011B\Bin\QQRobot_Secure\各种插件\DemoPlug（测试插件源代码，标准空类）\bin\Debug\TestClass.dll
+E:\我的作品\Robot2011B\Bin\QQRobot_Secure\各种插件\DemoPlug（测试插件源代码，标准空类）\bin\Debug\TestClass.pdb
+E:\我的作品\Robot2011B\Bin\QQRobot_Secure\各种插件\DemoPlug（测试插件源代码，标准空类）\bin\Debug\QQRobot.SDK.dll
+E:\我的作品\Robot2011B\Bin\QQRobot_Secure\各种插件\DemoPlug（测试插件源代码，标准空类）\bin\Debug\QQRobot.SDK.pdb
+E:\我的作品\Robot2011B\Bin\QQRobot_Secure\各种插件\DemoPlug（测试插件源代码，标准空类）\bin\Debug\QQRobot.SDK.xml
+D:\Z工作室\机器人打包\需打包文件\Z-QQRobot V 11.2 绿色版\各种插件\DemoPlug（测试插件源代码，标准空类）\bin\Debug\TestClass.dll
+D:\Z工作室\机器人打包\需打包文件\Z-QQRobot V 11.2 绿色版\各种插件\DemoPlug（测试插件源代码，标准空类）\bin\Debug\TestClass.pdb
+D:\Z工作室\机器人打包\需打包文件\Z-QQRobot V 11.2 绿色版\各种插件\DemoPlug（测试插件源代码，标准空类）\bin\Debug\QQRobot.SDK.pdb
+D:\Z工作室\机器人打包\需打包文件\Z-QQRobot V 11.2 绿色版\各种插件\DemoPlug（测试插件源代码，标准空类）\bin\Debug\QQRobot.SDK.xml
+D:\Z工作室\机器人打包\需打包文件\Z-QQRobot V 11.2 绿色版\各种插件\DemoPlug（测试插件源代码，标准空类）\obj\Debug\ResolveAssemblyReference.cache
+D:\Z工作室\机器人打包\需打包文件\Z-QQRobot V 11.2 绿色版\各种插件\DemoPlug（测试插件源代码，标准空类）\obj\Debug\DemoPlug.set.resources
+D:\Z工作室\机器人打包\需打包文件\Z-QQRobot V 11.2 绿色版\各种插件\DemoPlug（测试插件源代码，标准空类）\obj\Debug\GenerateResource-ResGen.read.1.tlog
+D:\Z工作室\机器人打包\需打包文件\Z-QQRobot V 11.2 绿色版\各种插件\DemoPlug（测试插件源代码，标准空类）\obj\Debug\GenerateResource-ResGen.write.1.tlog
+D:\Z工作室\机器人打包\需打包文件\Z-QQRobot V 11.2 绿色版\各种插件\DemoPlug（测试插件源代码，标准空类）\obj\Debug\TestClass.dll
+D:\Z工作室\机器人打包\需打包文件\Z-QQRobot V 11.2 绿色版\各种插件\DemoPlug（测试插件源代码，标准空类）\obj\Debug\TestClass.pdb

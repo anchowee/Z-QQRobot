@@ -1,0 +1,1140 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QQRobot.SDK</name>
+    </assembly>
+    <members>
+        <member name="T:QQRobot.SDK.Z_Db">
+            <summary>
+            QQ机器人数据库
+            </summary>
+        </member>
+        <member name="M:QQRobot.SDK.Z_Db.Encryption(System.Byte[],System.String,System.String)">
+            <summary>
+            AES加密
+            </summary>
+            <param name="Data">被加密的明文</param>
+            <param name="Key">密钥</param>
+            <param name="Vector">向量</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:QQRobot.SDK.Z_Db.Decryption(System.Byte[],System.String,System.String)">
+            <summary>
+            AES解密
+            </summary>
+            <param name="Data">被解密的密文</param>
+            <param name="Key">密钥</param>
+            <param name="Vector">向量</param>
+            <returns>明文</returns>
+        </member>
+        <member name="T:QQRobot.SDK.BaseObject">
+            <summary>
+            基础类型模式
+            </summary>
+        </member>
+        <member name="T:QQRobot.SDK.PlugClass">
+            <summary>
+            插件类型库
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.PlugClass.client">
+            <summary>
+            实例
+            </summary>
+        </member>
+        <member name="M:QQRobot.SDK.PlugClass.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:QQRobot.SDK.PlugClass.#ctor(System.String,System.Version,System.String,System.String,System.String,System.String,System.Version,System.Byte[])">
+            <summary>
+            构造函数
+            </summary>
+            <param name="name">插件名称</param>
+            <param name="version">插件版本</param>
+            <param name="plugkey">插件密钥</param>
+            <param name="author">作者</param>
+            <param name="tag">说明</param>
+            <param name="plugexternalname">插件外部通信名称</param>
+        </member>
+        <member name="P:QQRobot.SDK.PlugClass.Name">
+            <summary>
+            插件名称
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.PlugClass.PlugKey">
+            <summary>
+            插件密钥（必须不小于3位）
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.PlugClass.PlugExternalName">
+            <summary>
+            插件密钥（必须不小于3位）
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.PlugClass.Version">
+            <summary>
+            插件版本
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.PlugClass.Author">
+            <summary>
+            插件作者
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.PlugClass.Tag">
+            <summary>
+            用来存储一些有用的信息
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.PlugClass.FileData">
+            <summary>
+            文件
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.PlugClass.SdkVersion">
+            <summary>
+            Sdk版本号码
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.PlugClass.Domain">
+            <summary>
+            应用程序集
+            </summary>
+        </member>
+        <member name="T:QQRobot.SDK.PlugClass.RunningStatus">
+            <summary>
+            运行状态
+            </summary>
+        </member>
+        <member name="T:QQRobot.SDK.ClientSdk">
+            <summary>
+            机器人客户端相关操作。
+            By：天使
+            </summary>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.SendMessage(System.UInt32,System.String)">
+            <summary>
+            发送消息
+            </summary>
+            <param name="Receiver">接收者</param>
+            <param name="Message">消息</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.SendMessage(System.String,System.String)">
+            <summary>
+            发送消息
+            </summary>
+            <param name="Receiver">接收者，支持“,”分割，支持Admin与All</param>
+            <param name="Message">消息</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.SendClusterMessage(System.UInt32,System.String)">
+            <summary>
+            发送群消息
+            </summary>
+            <param name="Receiver">群号</param>
+            <param name="Message">消息</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.SendClusterMessage(System.String,System.String)">
+            <summary>
+            发送群消息
+            </summary>
+            <param name="Receiver">群号，支持“,”分割，支持All</param>
+            <param name="Message">消息</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.SendTempSession(System.UInt32,System.String)">
+            <summary>
+            发送临时会话消息
+            </summary>
+            <param name="Receiver">临时会话接收者</param>
+            <param name="Message"></param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.SendTempSession(System.String,System.String)">
+            <summary>
+            发送临时会话消息
+            </summary>
+            <param name="Receiver">临时会话接收者，支持“,”分割。</param>
+            <param name="Message">消息</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.SendVibration(System.UInt32)">
+            <summary>
+            发送弹窗
+            </summary>
+            <param name="Receiver">接收者</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.SendVibration(System.String)">
+            <summary>
+            发送弹窗
+            </summary>
+            <param name="Receiver">接收者，支持“,”分割，支持All</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.ExitRobot">
+            <summary>
+            退出机器人
+            </summary>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.GetClusterList">
+            <summary>
+            获取群列表
+            </summary>
+            <returns>列表数据</returns>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.GetFriendList">
+            <summary>
+            获取好友列表
+            </summary>
+            <returns>列表数据</returns>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.GetLoginStatus">
+            <summary>
+            获取登陆状态
+            </summary>
+            <returns>状态</returns>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.CreateSession(System.UInt32,System.UInt32)">
+            <summary>
+            获取登陆状态
+            </summary>
+            <returns>状态</returns>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.CreateSession(System.String,System.String)">
+            <summary>
+            获取登陆状态
+            </summary>
+            <returns>状态</returns>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.GetVerify">
+            <summary>
+            获取登陆验证码
+            </summary>
+            <returns>验证码图像</returns>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.GetClusterVerify(System.UInt32)">
+            <summary>
+            获取加群验证码
+            </summary>
+            <param name="ClusterNumber">群号</param>
+            <returns>验证码图像</returns>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.SendVerify(System.String)">
+            <summary>
+            发送登陆验证码
+            </summary>
+            <param name="VerifyCode">验证码</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.SendClusterVerify(System.UInt32,System.String)">
+            <summary>
+            发送加群验证码
+            </summary>
+            <param name="Cluster">群号</param>
+            <param name="VerifyCode">验证码</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.LoginRobot">
+            <summary>
+            登陆机器人
+            </summary>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.ResetRobot(System.Boolean)">
+            <summary>
+            重启机器人
+            </summary>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.AddBlackList(System.UInt32)">
+            <summary>
+            添加至黑名单
+            </summary>
+            <param name="QQ">QQ号码</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.DelBlackList(System.UInt32)">
+            <summary>
+            从黑名单删除
+            </summary>
+            <param name="QQ">QQ号码</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.ModifySignature(System.String)">
+            <summary>
+            修改签名
+            </summary>
+            <param name="Signature">新签名</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.UpdateConfig">
+            <summary>
+            更新配置文件
+            </summary>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.UpdateRobotInfo">
+            <summary>
+            更新机器人信息
+            </summary>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.Cluster(System.Boolean)">
+            <summary>
+            开启/关闭群回复
+            </summary>
+            <param name="Open">开启/关闭</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.Friend(System.Boolean)">
+            <summary>
+            开启/关闭好友回复
+            </summary>
+            <param name="Open">开启/关闭</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.ChangeStatus(System.String,System.String)">
+            <summary>
+            更改机器人状态
+            </summary>
+            <param name="Status">状态代码</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.CleanMemory">
+            <summary>
+            清理内存
+            </summary>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.AddCluster(System.UInt32,System.String)">
+            <summary>
+            加群
+            </summary>
+            <param name="ClusterNumber">群号</param>
+            <param name="Message">附言</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.ChangeNick(System.String)">
+            <summary>
+            更改昵称
+            </summary>
+            <param name="Nick">新昵称</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.ExitCluster(System.UInt32)">
+            <summary>
+            退出指定群
+            </summary>
+            <param name="ClusterNumber">群号</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.KickOutMember(System.UInt32,System.UInt32)">
+            <summary>
+            T出群成员（必须为群管理员）
+            </summary>
+            <param name="Cluster">群号【支持“,”分割，支持All】</param>
+            <param name="Member">成员号码【支持“,”分割】</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.InviteMember(System.UInt32,System.UInt32)">
+            <summary>
+            邀请好友进群（必须为群管理员，并且至少一方为好友）
+            </summary>
+            <param name="Cluster">群号【支持“,”分割，支持All】</param>
+            <param name="QQ">好友号码【支持“,”分割】</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.SendTempClusterMessage(System.UInt32,System.String)">
+            <summary>
+            发送临时群消息
+            </summary>
+            <param name="ClusterNumber">临时群群号</param>
+            <param name="Message">消息</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.GetRobotClientKey">
+            <summary>
+            获取QQ登陆口令
+            </summary>
+            <returns>口令</returns>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.GetClusterInfo(System.UInt32)">
+            <summary>
+            获取单个群信息
+            </summary>
+            <param name="ClusterNumber">群号码</param>
+            <returns>群信息</returns>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.IsClusterAdmin(System.UInt32,System.UInt32)">
+            <summary>
+            判断是否为管理员
+            </summary>
+            <param name="ClusterNumber">群号码</param>
+            <param name="MemberQQ">群成员号码</param>
+            <returns>0表示普通用户，1表示管理员，2表示创始人，-1表示未找到该群号，-2表示未找到该成员，-9表示机器人没有注册该方法</returns>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.SetFriendRemark(System.UInt32,System.String)">
+            <summary>
+            设置好友备注信息
+            </summary>
+            <param name="QQ">QQ号码</param>
+            <param name="Remark">备注信息</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.ShowMessage(System.String)">
+            <summary>
+            在机器人控制台中显示消息
+            </summary>
+            <param name="Message">消息</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.PostInterFace(QQRobot.SDK.MessageClass)">
+            <summary>
+            给接口发送Post数据
+            </summary>
+            <param name="e">MessageClass函数</param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.ReStartRobot">
+            <summary>
+            重新开启机器人
+            </summary>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.OnEvent(QQRobot.SDK.MessageClass)">
+            <summary>
+            事件触发器，该方法由机器人调用
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.RegApiEvent(QQRobot.SDK.ClientSdk.DoApi)">
+            <summary>
+            注册Api事件
+            </summary>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.RegGetValueEvent(QQRobot.SDK.ClientSdk.GetValue)">
+            <summary>
+            注册获取变量事件
+            </summary>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.RandomKey(System.Int32)">
+            <summary>
+            生成随机Key
+            </summary>
+            <param name="len">长度</param>
+            <returns>Key</returns>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.Install">
+            <summary>
+            判断是否可以安装该插件
+            </summary>
+            <returns>返回 true表示允许安装，返回false表示拒绝安装，返回false时需设置ErrorMessage变量</returns>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.OnClosePlug">
+            <summary>
+            关闭插件时触发
+            </summary>
+        </member>
+        <member name="M:QQRobot.SDK.ClientSdk.Init">
+            <summary>
+            开启插件
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.ReceiveAddFriends">
+            <summary>
+            收到加好友信息
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.ReceiveClusterIM">
+            <summary>
+            收到群消息
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.ReceiveNormalIM">
+            <summary>
+            收到好友消息
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.ReceiveTempSession">
+            <summary>
+            收到临时会话消息
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.ReceiveVibration">
+            <summary>
+            收到弹窗
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.ReceiveSignatureChanged">
+            <summary>
+            收到好友签名更改
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.ReceiveFriendChangeStatus">
+            <summary>
+            收到好友状态改变
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.ReceiveInputState">
+            <summary>
+            收到好友正在输入……
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.LoginSucceed">
+            <summary>
+            登陆成功
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.AddClusterSucceed">
+            <summary>
+            加群成功
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.ReceiveNewMemberAdd">
+            <summary>
+            新成员进群
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.ReceiveTempClusterIM">
+            <summary>
+            收到讨论组消息
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.ReceiveKickOut">
+            <summary>
+            掉线
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.RemovedFromCluster">
+            <summary>
+            有人被T出群
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.MemberCardChanged">
+            <summary>
+            收到成员群名片修改
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.NeedLoginVerify">
+            <summary>
+            需要登陆验证码
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.NeedAddClusterVerify">
+            <summary>
+            加群时需要验证码
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.AddFriendVerify">
+            <summary>
+            加好友验证
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.Receive_ExternalApi">
+            <summary>
+            收到外部Api
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.JoinClusterVerify">
+            <summary>
+            新成员请求加群
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.SleepTimeOk">
+            <summary>
+            休眠时间结束
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.ReceiveInviteToAddCluster">
+            <summary>
+            收到邀请入群
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.ReceiveVoiceMessage">
+            <summary>
+            收到语音消息
+            </summary>
+        </member>
+        <member name="E:QQRobot.SDK.ClientSdk.PassWordWrong">
+            <summary>
+            密码错误
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.ClientSdk.Item(QQRobot.SDK.QQRobotValue)">
+            <summary>
+            获取变量
+            </summary>
+            <param name="PropName">变量名称</param>
+            <returns></returns>
+        </member>
+        <member name="P:QQRobot.SDK.ClientSdk.ErrorMessage">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.ClientSdk.PluginName">
+            <summary>
+            插件名称
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.ClientSdk.PluginKey">
+            <summary>
+            插件唯一名称（英文+数字）
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.ClientSdk.Author">
+            <summary>
+            作者
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.ClientSdk.Description">
+            <summary>
+            插件说明
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.ClientSdk.PluginVersion">
+            <summary>
+            插件版本
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.ClientSdk.PlugImage">
+            <summary>
+            插件图片
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.ClientSdk.Agreement">
+            <summary>
+            安装协议
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.ClientSdk.PlugExternalName">
+            <summary>
+            插件外部通信名称
+            </summary>
+        </member>
+        <member name="T:QQRobot.SDK.SDK_Db">
+            <summary>
+            标准保存类型库
+            </summary>
+        </member>
+        <member name="M:QQRobot.SDK.SDK_Db.#ctor(QQRobot.SDK.ClientSdk)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:QQRobot.SDK.SDK_Db.ReadData">
+            <summary>
+            读取数据
+            </summary>
+        </member>
+        <member name="M:QQRobot.SDK.SDK_Db.SavaData">
+            <summary>
+            保存数据
+            </summary>
+        </member>
+        <member name="M:QQRobot.SDK.SDK_Db.GetObject(System.String)">
+            <summary>
+            获取资源
+            </summary>
+            <param name="Name">名称</param>
+            <returns>类型库</returns>
+        </member>
+        <member name="M:QQRobot.SDK.SDK_Db.AddObject(System.String,System.Object)">
+            <summary>
+            添加资源
+            </summary>
+            <param name="Name">资源名称</param>
+            <param name="Obj">类型库</param>
+        </member>
+        <member name="P:QQRobot.SDK.SDK_Db.Path">
+            <summary>
+            路径
+            </summary>
+        </member>
+        <member name="T:QQRobot.SDK.MessageClass">
+            <summary>
+            消息构造函数
+            </summary>
+        </member>
+        <member name="M:QQRobot.SDK.MessageClass.#ctor(QQRobot.SDK.QQRobotEvent,System.UInt32,System.UInt32,System.String,System.UInt32,System.String,System.String,System.UInt32,System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="e">事件类型</param>
+            <param name="clusternum">群号</param>
+            <param name="qunnid">群内部ID</param>
+            <param name="clustername">群名称</param>
+            <param name="sender">发送者</param>
+            <param name="nick">昵称</param>
+            <param name="message">消息</param>
+            <param name="robotqq">机器人QQ</param>
+            <param name="sendtime">发送时间</param>
+        </member>
+        <member name="P:QQRobot.SDK.MessageClass.Event">
+            <summary>
+            事件类型
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.MessageClass.ClusterNum">
+            <summary>
+            群号码
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.MessageClass.Qunnid">
+            <summary>
+            群内部Id
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.MessageClass.Sender">
+            <summary>
+            发送者
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.MessageClass.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.MessageClass.Nick">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.MessageClass.RobotQQ">
+            <summary>
+            机器人QQ
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.MessageClass.SendTime">
+            <summary>
+            发送时间
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.MessageClass.ClusterName">
+            <summary>
+            群名称
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.MessageClass.Cancel">
+            <summary>
+            是否取消发送到接口
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.MessageClass.Objs">
+            <summary>
+            传递的数据
+            </summary>
+        </member>
+        <member name="T:QQRobot.SDK.QQRobotEvent">
+            <summary>
+            事件枚举
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.None">
+            <summary>
+            无类型
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.ReceiveAddFriends">
+            <summary>
+            加好友
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.ReceiveClusterIM">
+            <summary>
+            群消息
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.ReceiveNormalIM">
+            <summary>
+            好友消息
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.ReceiveTempClusterIM">
+            <summary>
+            讨论组消息
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.ReceiveTempSession">
+            <summary>
+            临时会话消息
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.ReceiveVibration">
+            <summary>
+            弹窗
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.ReceiveInputState">
+            <summary>
+            正在输入
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.ReceiveSignatureChanged">
+            <summary>
+            签名更改
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.ReceiveFriendChangeStatus">
+            <summary>
+            好友更改状态
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.LoginSucceed">
+            <summary>
+            登陆成功
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.AddClusterSucceed">
+            <summary>
+            加群成功
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.ReceiveNewMemberAdd">
+            <summary>
+            新成员加入
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.ReceiveKickOut">
+            <summary>
+            掉线
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.RemovedFromCluster">
+            <summary>
+            有人被移除出群
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.MemberCardChanged">
+            <summary>
+            群成员修改群名片
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.NeedLoginVerify">
+            <summary>
+            需要登陆验证码
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.NeedAddClusterVerify">
+            <summary>
+            加群时需要验证码
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.NeedAddFriendVerify">
+            <summary>
+            加好友时需要验证码
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.AddFriendVerify">
+            <summary>
+            加好友验证
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.AddFriendSucceed">
+            <summary>
+            加好友成功
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.AddFriendFail">
+            <summary>
+            加好友失败
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.ReceiveExternalApi">
+            <summary>
+            收到外部API命令
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.ReceiveRequestJoinCluster">
+            <summary>
+            请求加群
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.SleepTimeOk">
+            <summary>
+            休眠时间结束
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.ReceiveInviteToAddCluster">
+            <summary>
+            收到邀请入群
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.ReceiveVoiceMessage">
+            <summary>
+            收到语音消息
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotEvent.PassWordWrong">
+            <summary>
+            密码错误
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.SendMessage">
+            <summary>
+            发送消息
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.SendClusterMessage">
+            <summary>
+            发送群消息
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.SendTempSession">
+            <summary>
+            发送临时会话消息
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.SendVibration">
+            <summary>
+            发送弹窗
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.ExitRobot">
+            <summary>
+            退出机器人
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.GetClusterList">
+            <summary>
+            获取群列表
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.GetLoginStatus">
+            <summary>
+            获取登陆状态
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.GetVerify">
+            <summary>
+            获取登陆验证码
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.GetClusterVerify">
+            <summary>
+            获取群验证码
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.SendVerify">
+            <summary>
+            发送登陆验证码
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.LoginRobot">
+            <summary>
+            登陆机器人
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.ResetRobot">
+            <summary>
+            重启机器人
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.AddBlacklist">
+            <summary>
+            添加黑名单
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.DelBlacklist">
+            <summary>
+            从黑名单中移除
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.ModifySignature">
+            <summary>
+            更改签名
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.UpdateConfig">
+            <summary>
+            更新配置文件
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.UpdateRobotInfo">
+            <summary>
+            更新机器人信息
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.Cluster">
+            <summary>
+            开启/关闭群自动回复
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.Friend">
+            <summary>
+            开启/关闭好友自动回复
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.ChangeStatus">
+            <summary>
+            更改在线状态
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.CleanMemory">
+            <summary>
+            清理内存
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.AddCluster">
+            <summary>
+            加群
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.SendClusterVerify">
+            <summary>
+            发送加群验证码
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.ChangeNick">
+            <summary>
+            更改昵称
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.ExitCluster">
+            <summary>
+            退出群
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.KickOutMember">
+            <summary>
+            T出成员
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.InviteMember">
+            <summary>
+            邀请成员加群
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.SendTempClusterMessage">
+            <summary>
+            发送讨论组消息
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.GetFriendList">
+            <summary>
+            获取好友列表
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.GetRobotClientKey">
+            <summary>
+            获取QQ登陆口令
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.GetClusterInfo">
+            <summary>
+            获取单个群的群信息
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.IsClusterAdmin">
+            <summary>
+            判断成员是否为群管理员
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.ShowMessage">
+            <summary>
+            显示信息
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.SetFriendRemark">
+            <summary>
+            设置好友备注
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.PostInterFace">
+            <summary>
+            给接口发送Post数据
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.ReStartRobot">
+            <summary>
+            重启整个机器人程序
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotApi.CreateSession">
+            <summary>
+            创建临时会话通道
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotValue.QQNumber">
+            <summary>
+            QQ号码
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotValue.LicenseType">
+            <summary>
+            授权类型
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotValue.InterFaceUrl">
+            <summary>
+            机器人接口地址
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotValue.InterFaceEncoder">
+            <summary>
+            接口编码
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotValue.RobotKey">
+            <summary>
+            机器人密钥
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotValue.AdminQQ">
+            <summary>
+            管理员QQ
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotValue.BlackList">
+            <summary>
+            黑名单列表
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotValue.ApiPort">
+            <summary>
+            Api端口
+            </summary>
+        </member>
+        <member name="F:QQRobot.SDK.QQRobotValue.IsFastLogin">
+            <summary>
+            是否快速登陆
+            </summary>
+        </member>
+        <member name="T:QQRobot.SDK.Sdk_QQUserInfo">
+            <summary>
+            QQ用户类
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.Sdk_QQUserInfo.QQNumber">
+            <summary>
+            QQ号码
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.Sdk_QQUserInfo.Nick">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="T:QQRobot.SDK.Sdk_ClusterInfo">
+            <summary>
+            群信息类
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.Sdk_ClusterInfo.ClusterNum">
+            <summary>
+            群号码
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.Sdk_ClusterInfo.ClusterName">
+            <summary>
+            群名称
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.Sdk_ClusterInfo.Creator">
+            <summary>
+            创建者
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.Sdk_ClusterInfo.Notice">
+            <summary>
+            群公告
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.Sdk_ClusterInfo.Description">
+            <summary>
+            群简介
+            </summary>
+        </member>
+        <member name="P:QQRobot.SDK.Sdk_ClusterInfo.Member">
+            <summary>
+            群成员
+            </summary>
+        </member>
+    </members>
+</doc>
